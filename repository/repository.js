@@ -1,37 +1,20 @@
 "use strict";
 
-const db = require("../models");
+var config = require("../config/index");
+let  UserModel =require("../models/user.model")
 
-const WatchFacesMaster=db.watchfacesMaster;
+async function getUserTasks(userId) {
+  try {
+    const user = await UserModel.findById(userId);
+    return user;
+  } catch (err) {
+    throw new Error(`Failed to fetch tasks: ${err.message}`);
+  }
+}
 
-const { sequelize, watchfacesMaster, watchfacesdevices } = require("../models");
 
-// const { sequelize, watchfacesMaster } = require("../models");
 
-const repository = () => {
-    
-   
-    
 
-    return {
-       
-        createCustomWatchface,
-        updateCustomWatchfaceBG,
-        
-    };
+module.exports = {
+  getUserTasks
 };
-
-const connect = () => {
-    return new Promise((resolve, reject) => {
-        try {
-            db.sequelize;
-            console.log("Connection has been established successfully.");
-            resolve(repository());
-        } catch (error) {
-            console.error("Unable to connect to the database:", error);
-            reject("error connecting: " + error.stack);
-        }
-    });
-};
-
-module.exports = Object.assign({}, { connect });
