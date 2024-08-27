@@ -1,0 +1,9 @@
+{
+    "dev": {
+        "APP_PORT": 4000,
+        "IS_SELF": true,
+        "mongodb_url": "mongodb+srv://pranshumongo:MKKhmtal1zpiyQvO@cluster0.4w5mb.mongodb.net/"        
+    }
+
+  
+}

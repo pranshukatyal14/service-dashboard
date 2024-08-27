@@ -1,0 +1,14 @@
+build/
+dist/
+node_modules/
+logs/
+pids/
+.idea
+.DS_Store
+.vscode
+package-lock.json
+launch.json
+yarn.lock
+# temp/
+# docker/
+# envs/
